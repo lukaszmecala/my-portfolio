@@ -25,7 +25,7 @@ const HeroSection = styled(motion.div)`
   align-items: center;
   gap: 2rem;
   margin-top: 12rem;
-  padding: 6rem 0rem;
+  padding: 6rem 2rem;
 
   @media (max-width: 91em) {
     padding: 6rem 3rem;
