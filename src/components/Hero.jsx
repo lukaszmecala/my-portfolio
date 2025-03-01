@@ -20,10 +20,10 @@ const floatAnimation = keyframes`
 
 const HeroSection = styled(motion.div)`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.3fr 1fr;
   justify-items: center;
   align-items: center;
-  gap: 2rem;
+  gap: 4rem;
   margin-top: 12rem;
   padding: 6rem 2rem;
 
