@@ -54,6 +54,16 @@ const HeaderContainer = styled.div`
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+    } else {
+      document.documentElement.style.overflowY = "auto";
+      document.body.style.overflowY = "auto";
+    }
+  }, [isMenuOpen]);
+
   return (
     <>
       <Overlay $isOpen={isMenuOpen} />
