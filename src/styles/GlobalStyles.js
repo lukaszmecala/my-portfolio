@@ -92,8 +92,8 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   font-size: 1.6rem;
-  overflow-x: hidden;
- 
+  overflow-x: hidden !important;
+  overflow-x: clip !important;
   
 }
 
