@@ -39,16 +39,15 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease;
-  @media (max-width: 48rem) {
-    position: fixed;
-    max-width: 140rem;
-    top: 2%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 98%;
-    z-index: 999;
-    background-color: var(--color-woodsmoke-950);
-  }
+
+  position: fixed;
+  max-width: 140rem;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 98%;
+  z-index: 999;
+  background-color: var(--color-woodsmoke-950);
 `;
 
 function Header() {
