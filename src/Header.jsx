@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from "styled-components";
+import styled from "styled-components";
 import Logo from "./ui/Logo";
 import Menu from "./components/Menu";
 import LanguageSwitcher from "./components/LanguageSwitcher";
@@ -11,23 +11,16 @@ const Overlay = styled.div`
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.64);
-  z-index: 1;
+  z-index: 999;
   transition: opacity 0.3s ease;
   opacity: ${({ $isOpen }) => ($isOpen ? "1" : "0")};
-  pointer-events: ${({ $isOpen }) => ($isOpen ? "none" : "auto")};
-`;
-
-const slideDown = keyframes`
-  0% {
-    transform: translate(-50%, -100%);
-  }
-  100% {
-    transform: translate(-50%, 0);
-  }
+  pointer-events: ${({ $isOpen }) => ($isOpen ? "auto" : "none")};
 `;
 
 const HeaderSection = styled.header`
   max-width: 140rem;
+  position: relative;
+  z-index: 1001;
   margin: 1.6rem 0 0;
   @media (max-width: 91em) {
     margin-left: 0.4rem;
@@ -46,67 +39,36 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease;
-
-  ${(props) =>
-    props.type === "sticky" &&
-    css`
-      position: fixed;
-      top: 2%;
-      left: 50%;
-      transform: translateX(-50%);
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      max-width: 140rem;
-      width: 98%;
-      z-index: 999;
-      background-color: var(--color-woodsmoke-950);
-      border: 1px solid var(--backdrop-color);
-      animation: ${slideDown} 0.3s forwards;
-    `};
-
-  /* ${(props) =>
-    props.$isMenuOpen &&
-    css`
-      position: static !important;
-      transform: none !important;
-      animation: none !important;
-    `} */
+  @media (max-width: 48rem) {
+    position: fixed;
+    max-width: 140rem;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 98%;
+    z-index: 999;
+    background-color: var(--color-woodsmoke-950);
+  }
 `;
 
 function Header() {
-  const [isSticky, setIsSticky] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const handleScroll = () => {
-    if (window.scrollY > 0 && !isMenuOpen) {
-      setIsSticky(true);
-    } else {
-      setIsSticky(false);
-    }
-  };
 
   useEffect(() => {
     if (isMenuOpen) {
+      document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
     } else {
+      document.documentElement.style.overflow = "auto";
       document.body.style.overflow = "auto";
     }
-  }, [isMenuOpen]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
   }, [isMenuOpen]);
 
   return (
     <>
       <Overlay $isOpen={isMenuOpen} />
       <HeaderSection>
-        <HeaderContainer
-          type={isSticky ? "sticky" : ""}
-          $isMenuOpen={isMenuOpen}
-        >
+        <HeaderContainer>
           <Logo />
           <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
           <LanguageSwitcher />

@@ -4,18 +4,6 @@ import styled from "styled-components";
 import Hamburger from "../ui/Hamburger";
 import menuItems from "../data/menuItems";
 
-const Overlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(255, 21, 21, 0.5);
-  z-index: -30000;
-  transition: opacity 0.3s ease;
-  opacity: ${({ $isOpen }) => ($isOpen ? "1" : "0")};
-  pointer-events: ${({ $isOpen }) => ($isOpen ? "auto" : "none")};
-`;
 const Link = styled.a`
   transition: color 0.3s ease-in;
   padding: 1rem;
@@ -43,16 +31,16 @@ const StyledList = styled.ul`
   @media (max-width: 48em) {
     flex-direction: column;
     position: fixed;
-    top: 0%;
+    top: 10%;
     left: 50%;
-    transform: translate(-50%, ${({ $isOpen }) => ($isOpen ? "26%" : "-120%")});
+    transform: translate(-50%, ${({ $isOpen }) => ($isOpen ? "24%" : "-140%")});
     width: 90%;
     background: var(--color-woodsmoke-950);
     padding: 2rem 0;
     border-radius: var(--border-radius-xl);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     border: 1px solid var(--backdrop-color);
-    z-index: 1000000000;
+    z-index: 1000;
     transition: transform 0.6s ease-in-out;
   }
 `;
@@ -78,14 +66,6 @@ function Menu({ isMenuOpen, setIsMenuOpen }) {
       setIsMenuOpen(false);
     }
   };
-
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden"; // Blokada scrolla
-    } else {
-      document.body.style.overflow = "auto"; // Przywrócenie scrolla
-    }
-  }, [isMenuOpen]);
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);

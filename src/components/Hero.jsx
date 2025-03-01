@@ -35,6 +35,7 @@ const HeroSection = styled(motion.div)`
   }
 
   @media (max-width: 48rem) {
+    margin-top: 11rem;
     padding: 5rem 4rem;
   }
 `;
