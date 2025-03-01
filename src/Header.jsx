@@ -14,7 +14,7 @@ const Overlay = styled.div`
   z-index: 1;
   transition: opacity 0.3s ease;
   opacity: ${({ $isOpen }) => ($isOpen ? "1" : "0")};
-  pointer-events: ${({ $isOpen }) => ($isOpen ? "auto" : "none")};
+  pointer-events: ${({ $isOpen }) => ($isOpen ? "none" : "auto")};
 `;
 
 const slideDown = keyframes`

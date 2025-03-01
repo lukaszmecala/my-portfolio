@@ -81,6 +81,8 @@ const GlobalStyles = createGlobalStyle`
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+
 }
 
 body {
@@ -90,6 +92,8 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   font-size: 1.6rem;
+  overflow-x: hidden;
+  overflow-x: clip !important;
   
 }
 

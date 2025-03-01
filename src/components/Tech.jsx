@@ -61,8 +61,8 @@ function Tech() {
   return (
     <>
       <Title title={t("tech_title")} />
-      <TechSection>
-        <Heading as="h3">{t("tech_subtitle")}</Heading>
+      <TechSection id="tech">
+        <Heading as="h5">{t("tech_subtitle")}</Heading>
         <TechContainer>
           {technologies.map((tech) => (
             <div key={Math.random(0, 299) * new Date().getTime() * 252435}>

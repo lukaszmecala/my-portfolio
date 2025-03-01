@@ -89,7 +89,7 @@ const Description = styled.p`
 
   @media (max-width: 48em) {
     line-height: 1.4;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 `;
 const ProjectInfo = styled.div`
@@ -134,7 +134,7 @@ const Projects = () => {
   return (
     <>
       <Title title={t("projects_title")} />
-      <Section>
+      <Section id="projects">
         {projects.slice(0, visibleProjects).map((project, index) => (
           <ProjectContainer
             key={index}
