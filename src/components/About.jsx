@@ -127,7 +127,7 @@ function About() {
       <Title title={t("about_me_title")} />
       <AboutSection>
         <ImgContainer>
-          <Img src="src/assets/about-img.png" />
+          <Img src="/about-img.png" />
         </ImgContainer>
 
         <AboutRow>
