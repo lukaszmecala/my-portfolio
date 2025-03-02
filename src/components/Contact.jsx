@@ -125,7 +125,12 @@ const LocationNote = styled.p`
 `;
 
 const Contact = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const currentCVFileLanguage =
+    i18n.language === "pl"
+      ? "/CV Lukasz Mecala.pdf"
+      : "/CV Lukasz Mecala EN.pdf";
 
   return (
     <>
@@ -167,7 +172,7 @@ const Contact = () => {
               </IconWrapper>
               <Content>
                 <Heading as={"h6"}>{t("contact_resume")}</Heading>
-                <Link href="" download>
+                <Link href={currentCVFileLanguage} download>
                   {t("download_pdf")}
                 </Link>
                 <Status>{t("last_update_cv")}</Status>
