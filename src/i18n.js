@@ -109,9 +109,9 @@ const resources = {
       contact_resume: "CV",
       avaliable_status: "Dostępny 24/7",
       download_pdf: "Pobierz PDF",
-      last_update_cv: "Ostatnia aktualizacaja: Luty 2025",
+      last_update_cv: "Ostatnia aktualizacaja: Październik 2025",
       contact_reply: "Odpowiadam w cigu 24h",
-      contact_location: "Opole, Polska | Dostępny Zdalnie",
+      contact_location: "Wrocław, Polska | Dostępny Zdalnie",
       title: "Łukasz Męcała - Frontend Developer | React, Next.js, WordPress",
       description:
         "Jestem frontend developerem specjalizującym się w React, Next.js i WordPressie. Tworzę dynamiczne, responsywne strony internetowe i aplikacje webowe.",
@@ -224,9 +224,9 @@ const resources = {
       contact_resume: "Resume",
       avaliable_status: "Available 24/7",
       download_pdf: "Download PDF",
-      last_update_cv: "Last update: February 2025",
+      last_update_cv: "Last update: October 2025",
       contact_reply: "Reply within 24h",
-      contact_location: "Opole, Poland | Remote Avaliable",
+      contact_location: "Wrocław, Poland | Remote Avaliable",
       title: "Łukasz Męcała - Frontend Developer | React, Next.js, WordPress",
       description:
         "I am a frontend developer specializing in React, Next.js, and WordPress. I create dynamic, responsive websites and web applications.",

@@ -128,9 +128,7 @@ const Contact = () => {
   const { t, i18n } = useTranslation();
 
   const currentCVFileLanguage =
-    i18n.language === "pl"
-      ? "/CV Lukasz Mecala.pdf"
-      : "/CV Lukasz Mecala EN.pdf";
+    i18n.language === "pl" ? "/CV-Lukasz_Mecala.pdf" : "/CV-Lukasz-Mecala .pdf";
 
   return (
     <>
